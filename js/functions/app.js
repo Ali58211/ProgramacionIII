@@ -220,5 +220,8 @@ console.log(res);*/
 // ---------------------------
 
 // const res = nums.slice(0, 3); //corta una parte del array para copiarla
-const res = nums.splice(0, 3); // separa una parte del array original
-console.log(res, nums);
+// const res = nums.splice(0, 3); // separa una parte del array original
+
+// console.log(res, nums);
+
+const res = nums.forEach(console.log);
