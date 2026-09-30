@@ -1,6 +1,6 @@
 // Funciones
 /* node ./app.js --para ejecutar el archivo en la terminal
- node --watch ./app.js --para ejecutar el archivo seguido en la terminal */
+ node --watch ./app.js --para ejecutar el archivo seguido en la terminal, para salir ctrl + c (copy)*/
 
 /* bienvenido(); //solo aplica si la funcion esta en el mismo scope
 
@@ -140,10 +140,10 @@ function b() {
 }
 
 a(b);*/
-
+/*
 function operacion(cb) {
   if (cb) {
-    const res = cb(2, 4);
+    const res = cb(3, 2);
     return "el resultado es: " + res;
   }
   //cb && cb();
@@ -154,6 +154,71 @@ const sumar = (a, b) => a + b;
 
 const restar = (a, b) => a - b;
 
-const dividir = (a, b) => a / b;
+// const dividir = (a, b) => b != 0 && a / b;
+const dividir = (a, b) => {
+  if (b == 0) return "No se puede dividir por cero";
+  return a / b;
+};
 
-console.log(operacion(multiplicar));
+//console.log(operacion(restar));
+console.log(operacion(() => dividir(1, 3)));*/
+
+// Si necesito pasarle parametros a un callback, envuelvo ese callback en una funcion anonima "() =>"
+
+// Closure
+
+// Closure es una funcion que retorna otro funcion
+
+// const wrapper = () => multiplicar(5, 5);
+// console.log(operacion(() => restar(5, 7)));
+
+// metodos de array
+
+// const plus2 = (n) => n * 2;
+
+//const numbers = [4, 6, 8, 2, 9, 3];
+const numbers = [4, 6, 8, 2, 9, 3]
+  .toSorted((a, b) => a - b)
+  .map((n) => n * 2)
+  .filter((n) => n > 10); // se pueden concatenar metodos mintras sean inmutables
+
+// const newNumbers = numbers.map(plus2);
+// const newNumbers = numbers.map((n) => n.toString()); // .map promueve/incentiva la inmutabilidad
+
+// const newNumbers = numbers.filter((n) => n % 2 !== 0);// filter no transforma el array original, recive un parametro ´predicador´ y lo filtra
+// const newNumbers = numbers.filter((n) => n % 2 == 0);
+// const newNumbers = numbers.filter((n) => n >= 3);
+// const newNumbers = numbers.sort((a, b) => b - a); //.sort modifica el array original, ordena le array
+// const newNumbers = numbers.sort((a, b) => a - b);
+// const newNumbers = numbers.toSorted((a, b) => a - b); //ordena el array sin modificar el original
+
+//console.log(newNumbers);
+//console.log(numbers);
+
+// Predicado --> proposición = sujeto predicado
+/*
+const imp1 = [4, 6, 8, "a", 2, 9, 3, "b"];
+const imp2 = [2, 16, 14, 6, 9, 10, 8];
+const imp3 = [1, 6, 7, 3, 2, 11, 13]; // 6 es el impostor
+
+const imp4 = [8, 2, 5, 1, 8, 7, 13]; // 7 es el impostor // No se puede, aun...
+
+console.log(imp1.find((n) => isNaN(n))); //.find escuentra el numero como el filter pero sin la validacion
+console.log(imp1.filter((n) => isNaN(n))); // filter para mas de un elemento
+// console.log(imp2);
+// console.log(imp3);
+// console.log(imp4);
+*/
+
+// !!El siguiente metodo no es recomendable utilizarlo, si es posible use otro ¡¡
+
+const nums = [3, 6, 9, 2, 7, 1, 7, 8, 4];
+/*
+const res = nums.reduce((act, acc) => act * acc, 0);
+
+console.log(res);*/
+// ---------------------------
+
+// const res = nums.slice(0, 3); //corta una parte del array para copiarla
+const res = nums.splice(0, 3); // separa una parte del array original
+console.log(res, nums);
