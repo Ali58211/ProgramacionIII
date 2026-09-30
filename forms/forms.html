@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formularios</title>
+  </head>
+  <body>
+    <h1>Formularios</h1>
+    <br />
+    <nav>
+      <a href="/">ir al inicio</a>
+      <!--/ indica el inicio-->
+      <br />
+      <a href="/#abajo">ir abajo del inicio</a>
+    </nav>
+    <hr />
+    <form>
+      <fieldset>
+        <legend><strong>Datos Personales:</strong></legend>
+        <div>
+          <label for="id-apelnom">Nombre y Apellido</label>
+          <input
+            type="text"
+            name="apelnom"
+            id="id-apelnom"
+            placeholder="Juan Perez"
+            required
+            minlength="6"
+          />
+          <!--required lanza un ms para completar -->
+        </div>
+        <div>
+          <label for="id-tel">Telefono</label>
+          <input
+            type="tel"
+            name="tel"
+            id="id-tel"
+            placeholder="3364123255"
+            required
+            minlength="9"
+            maxlength="10"
+          />
+        </div>
+        <div>
+          <label for="id-mail">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="id-mail"
+            placeholder="pepeJuan@gmail.com"
+            required
+          />
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend><strong>Vehiculo:</strong></legend>
+        <div>
+          <label for="id-marca">Marca</label>
+          <select name="marca" id="id-marca">
+            <option value="ford">Ford</option>
+            <option value="chev">chevrolet</option>
+            <option value="fiat">Fiat</option>
+            <option value="toyo">Toyota</option>
+            <option value="audi">Audi</option>
+            <option value="Lamb">Lamboghini</option>
+            <option value="McCl">McClaren</option>
+            <option value="porc">Porche</option>
+          </select>
+        </div>
+        <div>
+          <span>Tipo de combustible:</span>
+          <label for="id-hibrid">Hibrido</label>
+          <input
+            type="radio"
+            name="combustible"
+            id="id-hibrid"
+            value="Hibrido"
+          />
+          <!-- <br /> -->
+          <label for="id-diesel">Diesel</label>
+          <input
+            type="radio"
+            name="combustible"
+            id="id-diesel"
+            value="Diesel"
+          />
+          <!-- <br /> -->
+          <label for="id-nafta">Nafta</label>
+          <input type="radio" name="combustible" id="id-nafta" value="Nafta" />
+          <!-- <br /> -->
+          <label for="id-elec">Electrico</label>
+          <input
+            type="radio"
+            name="combustible"
+            id="id-elec"
+            value="Electrico"
+          />
+        </div>
+        <div>
+          <h4>Adicionales:</h4>
+          <label for="id-gnc">GNC</label>
+          <input type="checkbox" name="adicional" id="id-gnc" value="GNC" />
+          <br />
+          <label for="id-gps">GPS</label>
+          <input type="checkbox" name="adicional" id="id-gps" value="GPS" />
+        </div>
+        <div>
+          <label for="id-observaciones">Observaciones</label>
+          <br />
+          <textarea
+            name="observaciones"
+            id="id-observaciones"
+            cols="40"
+            rows="4"
+          ></textarea>
+        </div>
+      </fieldset>
+
+      <!--Fieldset marca un cuadrado-->
+      <button type="submit">Enviar</button>
+    </form>
+  </body>
+</html>

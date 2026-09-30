@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>el clima</title>
+  </head>
+  <body>
+    <h1>Tablas</h1>
+    <table border="1">
+      <thead>
+        <!-- cabeza de la tabla-->
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Edad</th>
+      </thead>
+      <tbody>
+        <!--Cuerpo de la tabla-->
+        <tr>
+          <td>ALi</td>
+          <td rowspan="2">Canario</td>
+          <!-- ocupa las filas que le asignemos-->
+          <td>19</td>
+        </tr>
+        <tr>
+          <td>Pepe</td>
+          <td>28</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <!--Pie de la tabla-->
+        <tr>
+          <td colspan="3">&copy; Copyright @ 2026</td>
+        </tr>
+      </tfoot>
+    </table>
+    <table border = "1">
+      <thead>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>Acceso ip</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Cleon</td>
+          <td>Churcher</td>
+          <td>CLeon@pepepep</td>
+          <td>Male</td>
+          <td>21346436</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Pebrok</td>
+          <td>Pearne</td>
+          <td>Pearne@pepepep</td>
+          <td>Male</td>
+          <td>21345466</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Stecha</td>
+          <td>Gruszechi</td>
+          <td>Gruszechi@pepepep</td>
+          <td>Female</td>
+          <td>21331245636</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>pepe</td>
+          <td>CAldera</td>
+          <td>Caldera@pepepep</td>
+          <td>GenderFluid</td>
+          <td>1010110</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Sydelle</td>
+          <td>Gomez</td>
+          <td>Gomez@pepepep</td>
+          <td>Female</td>
+          <td>00997655</td>
+        </tr>
+        <tfoot>
+          <tr>
+            <td colspan="6" align="center"><b>Total:5</b></td>
+          </tr>
+          <tr>
+            <td colspan="2">Female:2</td>
+            <td colspan="2">Male:2</td>
+            <td colspan="2">GenderFluid:1</td>
+          </tr>
+        </tfoot>
+      </tbody>
+    </table>
+    <hr>
+    <h1>Formularios</h1>
+    <form> <!--action="/donde-lo-envio-php" -- method="post"-->
+      <div>
+        <label for="Id-nombre">Nombre:</label><!--Etiqueta / for se usa con valores numericos-->
+        <input type="text" name="Nombre" id="Id-nombre" placeholder="Juan"/><!--name denora el atributo en json-->
+      </div>
+      <div>
+        <label for="Id-apellido">Apellido:</label><!--Etiqueta-->
+        <input type="text" name="Apellido" id="Id-apellido" placeholder="Perez"/>
+      </div>
+      <div>
+        <label>
+        nombre:
+      <input type="text" name="nombre" placeholder="Juan"/>
+      </label><!--es lo mismo pero mas corto-->
+      </div>
+      <div>
+        <label for="Id-Edad">
+        Edad:
+        <input type="number" name="edad" id="Id-Edad">
+      </label>
+      </div>
+      <input type="submit" value="enviar">
+    </form>
+  </body>
+</html>

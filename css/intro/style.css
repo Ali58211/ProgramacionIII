@@ -1,0 +1,22 @@
+* {
+  text-transform: capitalize; /*pone las mayusculas iniciales en las palabras*/
+}
+
+h2 {
+  color: blue;
+}
+h1 {
+  display: inline;
+  visibility: visible;
+  opacity: 50%;
+}
+
+ul {
+  background-color: red;
+  list-style: square; /*cambia el simbolo de los items*/
+}
+ol {
+  color: white;
+  background-color: green;
+  list-style: upper-roman;
+}
