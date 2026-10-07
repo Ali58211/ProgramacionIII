@@ -35,12 +35,32 @@
 // input: "Hola que tal"
 // output: 5
 
-function contarVocales(cadena) {
-  return cadena
-    .toLowerCase()
-    .split("")
-    .filter((letra) => "aeiou".includes(letra)).length;
+// 1er opcion..
+// function contarVocales(str) {
+//   let contador = 0;
+//   const vocales = ["a", "e", "i", "o", "u"];
+//   for (const char of str) {
+//     if(vocales.includes(char)) constador ++;
+//   }
+//   return contador;
+// }
+
+// 2da opcion..
+
+// function contarVocales(str) {
+//   const vocales = ["a", "e", "i", "o", "u"];
+//   return [...str].filter((c) => vocales.includes(c)).length;
+// }
+
+// 3er opcion..
+
+function contarVocales(str) {
+  return str.replace(/[^aeiou]/g, "").length; ///[^aeiou]/ -- expresion regular
 }
 
-const palabra = "Hola que tal";
-console.log(palabra, contarVocales(palabra));
+console.log(contarVocales("hola mundo"));
+console.log(contarVocales("hola que tal?"));
+console.log(contarVocales("oso"));
+
+// const palabra = "Hola que tal";
+// console.log(palabra, contarVocales(palabra));
