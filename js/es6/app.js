@@ -132,21 +132,122 @@ const piñata = [
 // console.log(set);
 
 //quiero modificar el precio sin modificar el objeto
-const product = {
-  id: 1,
-  precio: 3999,
-  nombre: "Pepitos",
-  categorias: ["Snacks", "Galletitas", "Consumible"],
-  hasStock: true,
-};
+// const product = {
+//   id: 1,
+//   precio: 3999,
+//   nombre: "Pepitos",
+//   categorias: ["Snacks", "Galletitas", "Consumible"],
+//   hasStock: true,
+// };
 
-// const productUpdated = {precio: 500, ...product};//queda el objeto princiapl
-// const productUpdated = { ...product, precio: 5000 }; //modifica el precio sin modificar el objeto original
-const updateValue = (key, value) => ({ ...product, [key]: value }); //modifica el precio sin modificar el objeto original
-const productUpdated = updateValue("precio", 5000);
-const productUpdated2 = updateValue("hasStock", false);
-const productUpdated3 = updateValue("isRepetido", false);
+// // const productUpdated = {precio: 500, ...product};//queda el objeto princiapl
+// // const productUpdated = { ...product, precio: 5000 }; //modifica el precio sin modificar el objeto original
+// const updateValue = (key, value) => ({ ...product, [key]: value }); //modifica el precio sin modificar el objeto original
+// const productUpdated = updateValue("precio", 5000);
+// const productUpdated2 = updateValue("hasStock", false);
+// const productUpdated3 = updateValue("isRepetido", false);
 
-console.log([productUpdated, productUpdated2, productUpdated3]);
+// console.log([productUpdated, productUpdated2, productUpdated3]);
 
 // console.log(productUpdated);
+
+// ---------------------
+// nullish coalescing
+
+// const mayor = true;
+
+// // const msg = mayor || "Es menor"; //operador OR
+
+// // el OR, pero para null y undefined
+// const msg = mayor ?? "Es menor"; // es un OR mas semantico,, ?? se usa para asignar valores por defectos
+
+// console.log("Mayor?: ", msg);
+
+// let obj = null ?? {}; // es nulo o un obj vacio
+
+// optional chaining -- por si se nos elvida el nullish coalescing
+
+// let obj = null;
+
+// //...
+
+// // obj ??= {}; // es lo mismo ⤵️(nullish coalescing)
+// // obj = obj ?? {};
+
+// console.log(obj?.age); //? pregunta si esta vacio (optional chaining)
+
+// obj = {
+//   name: "Juan",
+//   age: 22,
+// };
+
+// Extra: Set, Map, y Clases (NO ENTRAN EN EL PARCIAL)
+
+// set
+
+// const set = new Set();
+// set.add(2);
+// set.add(6);
+// set.add(3);
+// set.add(2);
+// set.add(3);
+
+// console.log(set);
+// console.log(set.size); //.size muestra la cantidad de elementos
+//los elementos repetidos no se muestran ni se guardan.
+
+// map
+
+// const map = new Map();
+
+// map.set("Hola", 2); // la key siempre es string
+// map.set("Hola", 5); // reemplaza la anterior con la misma key
+// map.set("Hola", [2, 3, 4]); // Dentro del value se puede poner cualquier cosa
+
+// console.log(map);
+
+// Hola que tal
+// h: 1, o: 1, l: 2, a: 1 " ": 2,
+// function countChars(str) {
+//   const map = new Map();
+//   for (const char of str) {
+//     if (!map.has(char)) {
+//       map.set(char, 1);
+//     } else {
+//       const value = map.get(char);
+//       map.set(char, value + 1);
+//     }
+//   }
+//   return map;
+// }
+
+// const result = countChars("Hola que tal? todo bien?");
+// console.log(result);
+
+// buscar: Big O notation
+//La notación Big O es un lenguaje matemático que se usa en ciencias de la computación para medir cómo escala la eficiencia de un algoritmo a medida que crece el tamaño de los datos de entrada (n).
+
+// Clases
+
+// class Persona {
+//   // Una clase solo puede tener un solo constructor
+//   #name;
+//   #lastname;
+//   constructor(name, lastname) {
+//     this.#name = name;
+//     this.#lastname = lastname;
+//   }
+//   get name() {
+//     return this.#name;
+//   }
+
+//   set name(nombre) {
+//     this.#name = nombre;
+//   }
+// }
+
+// const juan = new Persona("Juan", "Perez");
+// juan.lastname = "Jose";
+
+// console.log(juan.lastname);
+// console.log(juan);
