@@ -1,0 +1,10 @@
+{
+  "name": "ejercicios-js",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Ejercicios de lógica y algoritmia en JavaScript",
+  "scripts": {
+    "test": "node --test"
+  }
+}
