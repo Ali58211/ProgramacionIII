@@ -116,13 +116,13 @@ function limpiar() {
     }, 5500);
   });
 }
-function tomarBebida(time) {
+function tomarBebida() {
   return new Promise((res, rej) => {
-    const ok = true;
+    const ok = false;
     setTimeout(() => {
       if (ok) res("Que refrescante");
       else rej("No hay nada para tomar :(");
-    }, time);
+    }, 3000);
   });
 }
 
@@ -152,7 +152,8 @@ async function flujo() {
   }
 }
 // esto solo funciona con tareas secuenciales
-flujo();
+
+// flujo();
 
 // EventLoop
 
@@ -162,3 +163,64 @@ flujo();
 // en un solo hilo va procesando poco a poco cada tarea(thread)
 
 // Explicacion de EventLoop - Antonio Sarosi
+
+// paralelismo
+
+console.time("todo");
+/*
+const all =  Promise.allSettled([cortarPasto(), tomarBebida()]); //all porqur las ajecuta una tras otra-- se defina a ejecutar en un array
+all.then((values) => {
+  console.log(values);
+  console.timeEnd("todo");
+});*/
+
+// const all = await Promise.allSettled([cortarPasto(), tomarBebida()]);
+// console.log(all);
+// console.timeEnd("todo");
+
+// all:  si falla una, falla todas
+// llSettled: si falla lo paso y continua
+
+// top level await
+// await pasarRastrillo();
+
+// Peticiones HTTP
+
+// fetch("https://jsonplaceholder.typicode.com/photos");
+//   .then((res) => res.json()) //respuesta recivida
+//   .then((data) => console.log(data)); //respuesta procesada lista para ver
+
+// async function getPhotos() {
+//   const res = await fetch("https://jsonplaceholder.typicode.com/photos");
+//   const data = await res.json();
+
+//   console.log(data.slice(0, 5));
+// }
+
+// getPhotos();
+
+// const obj = {
+//   title: "",
+//   body: "",
+//   userId: 0,
+// };
+
+// async function crearPublicacion(publicacion) {
+//   const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
+//     method: "POST",
+//     headers: {
+//       "Content-type": "application/json; charset=UTF-8",
+//     },
+//     body: JSON.stringify(publicacion), //convertir obj a json- .parse pasa json a obj
+//   });
+
+//   const data = await res.json();
+//   console.log(data);
+// }
+
+// const publi = {
+//   title: "Clase de async",
+//   body: "Clase muy, pero muy, tediosa y larga",
+//   userId: 1,
+// };
+// crearPublicacion(publi);
